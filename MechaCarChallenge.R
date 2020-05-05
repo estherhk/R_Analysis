@@ -6,8 +6,8 @@ lm(mpg ~ vehicle.length, data=mecha_table) #generate single linear regression fo
 lm(mpg ~ ground.clearance, data=mecha_table) #generate single linear regression for ground clearance
 
 summary (lm(mpg ~ vehicle.length + vehicle.weight+ spoiler.angle + ground.clearance + AWD, data = mecha_table)) #generate a summary statement
-summar(lm(mpg ~ vehicle.length, data=mecha_table)) #generate summar stats for vehicle length
-summar(lm(mpg ~ ground.clearance, data=mecha_table)) #generate summar stats for ground clearance
+summary (lm(mpg ~ vehicle.length, data=mecha_table)) #generate summary stats for vehicle length
+summary (lm(mpg ~ ground.clearance, data=mecha_table)) #generate summary stats for ground clearance
 
 #Suspension Coil Summary
 suspension_table <-read.csv(file='Suspension_Coil.csv',sep=',', header = T)
@@ -21,9 +21,6 @@ sample_table2 <- suspension_table %>% sample_n(50) #generate another 50 randomly
 t.test(sample_table$PSI, sample_table2$PSI) #compare means
        
 #Suspension Coil T-Test
-t.test(sample_table$PSI, mu = 1500) #get mean for sample table
-t.test(sample_table2$PSI, mu = 1500) #get mean for sample table 2
-
 t.test(subset(suspension_table, Manufacturing_Lot=="Lot1")$PSI, mu = 1500)
 t.test(subset(suspension_table, Manufacturing_Lot=="Lot2")$PSI, mu = 1500)
 t.test(subset(suspension_table, Manufacturing_Lot=="Lot3")$PSI, mu = 1500)
